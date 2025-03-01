@@ -33,6 +33,7 @@
         pkgs.htop
         pkgs.raycast
         pkgs.syncthing
+        pkgs.aerospace
       ];
 
       homebrew = {
@@ -106,12 +107,14 @@
           "/System/Applications/Music.app"
           "/Applications/WhatsApp.app"
           "${pkgs.discord}/Applications//Discord.app"
+          "/Applications/Spark\ Desktop.app"
           "/System/Applications/Mail.app"
           "${pkgs.thunderbird}/Applications/Thunderbird\ ESR.app"
           "/System/Applications/Calendar.app"
           "/System/Applications/Books.app"
           "/System/Applications/Home.app"
           "/System/Applications/Notes.app"
+          "/System/Applications/Reminders.app"
           "${pkgs.obsidian}/Applications//Obsidian.app"
           "/System/Applications/App\ Store.app"
           "/System/Applications/System\ Settings.app"
