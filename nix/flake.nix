@@ -119,7 +119,7 @@
           "/Applications/Windows\ App.app"
           "/Applications/Parsec.app"
           "${pkgs.moonlight-qt}/Applications/Moonlight.app"
-          "/Applications/iPhone\ Mirroring.app"
+          "/System/Applications/iPhone\ Mirroring.app"
           "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
           "/Applications/Github\ Desktop.app"
           "${pkgs.alacritty}/Applications/Alacritty.app"
