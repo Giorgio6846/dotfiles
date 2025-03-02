@@ -36,6 +36,8 @@
         pkgs.aerospace
       ];
 
+
+
       homebrew = {
         enable=true;
         brews = [
@@ -99,7 +101,7 @@
         finder.ShowMountedServersOnDesktop = true;
         menuExtraClock.Show24Hour = true;
         NSGlobalDomain._HIHideMenuBar = true;
-
+        dock.autohide = true;
         dock.persistent-apps = [
           "/System/Applications/Launchpad.app"
           "/Applications/Safari.app"
