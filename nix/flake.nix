@@ -32,12 +32,9 @@
         pkgs.btop
         pkgs.htop
         pkgs.raycast
-        pkgs.syncthing
         pkgs.aerospace
         pkgs.sketchybar
       ];
-
-
 
       homebrew = {
         enable=true;
@@ -52,6 +49,7 @@
           "beekeeper-studio"
           "elgato-camera-hub"
           "parsec"
+          "syncthing"
       ];
       masApps = {
         "WhatsApp Messenger" = 310633997;
@@ -98,38 +96,44 @@
         '';
 
       system.defaults = {
-        NSGlobalDomain.AppleICUForce24HourTime = true;
         finder.ShowMountedServersOnDesktop = true;
         menuExtraClock.Show24Hour = true;
-        NSGlobalDomain._HIHideMenuBar = true;
-        dock.autohide = true;
-        dock.persistent-apps = [
-          "/System/Applications/Launchpad.app"
-          "/Applications/Safari.app"
-          "${pkgs.brave}/Applications/Brave\ Browser.app"
-          "/System/Applications/Music.app"
-          "/Applications/WhatsApp.app"
-          "${pkgs.discord}/Applications//Discord.app"
-          "/Applications/Spark\ Desktop.app"
-          "/System/Applications/Mail.app"
-          "${pkgs.thunderbird}/Applications/Thunderbird\ ESR.app"
-          "/System/Applications/Calendar.app"
-          "/System/Applications/Books.app"
-          "/System/Applications/Home.app"
-          "/System/Applications/Notes.app"
-          "/System/Applications/Reminders.app"
-          "${pkgs.obsidian}/Applications//Obsidian.app"
-          "/System/Applications/App\ Store.app"
-          "/System/Applications/System\ Settings.app"
-          "/System/Applications/Utilities/Screen\ Sharing.app"
-          "/Applications/Windows\ App.app"
-          "/Applications/Parsec.app"
-          "${pkgs.moonlight-qt}/Applications/Moonlight.app"
-          "/System/Applications/iPhone\ Mirroring.app"
-          "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
-          "/Applications/Github\ Desktop.app"
-          "${pkgs.alacritty}/Applications/Alacritty.app"
-        ];
+
+        NSGlobalDomain = {
+          AppleICUForce24HourTime = true;
+          _HIHideMenuBar = true;
+        };
+
+        dock = {
+          autohide = true;
+          persistent-apps = [
+            "/System/Applications/Launchpad.app"
+            "/Applications/Safari.app"
+            "${pkgs.brave}/Applications/Brave\ Browser.app"
+            "/System/Applications/Music.app"
+            "/Applications/WhatsApp.app"
+            "${pkgs.discord}/Applications//Discord.app"
+            "/Applications/Spark\ Desktop.app"
+            "/System/Applications/Mail.app"
+            "${pkgs.thunderbird}/Applications/Thunderbird\ ESR.app"
+            "/System/Applications/Calendar.app"
+            "/System/Applications/Books.app"
+            "/System/Applications/Home.app"
+            "/System/Applications/Notes.app"
+            "/System/Applications/Reminders.app"
+            "${pkgs.obsidian}/Applications//Obsidian.app"
+            "/System/Applications/App\ Store.app"
+            "/System/Applications/System\ Settings.app"
+            "/System/Applications/Utilities/Screen\ Sharing.app"
+            "/Applications/Windows\ App.app"
+            "/Applications/Parsec.app"
+            "${pkgs.moonlight-qt}/Applications/Moonlight.app"
+            "/System/Applications/iPhone\ Mirroring.app"
+            "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
+            "/Applications/Github\ Desktop.app"
+            "${pkgs.alacritty}/Applications/Alacritty.app"
+          ];
+        };
       };
 
       # Necessary for using flakes on this system.
