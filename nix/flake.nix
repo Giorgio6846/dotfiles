@@ -34,6 +34,7 @@
         pkgs.raycast
         pkgs.syncthing
         pkgs.aerospace
+        pkgs.sketchybar
       ];
 
 
@@ -161,7 +162,7 @@
             enable = true;
 
             # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-            enableRosetta = false;
+            enableRosetta = true;
 
             # User owning the Homebrew prefix
             user = "giorgio6846";
