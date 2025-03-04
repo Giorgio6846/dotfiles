@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
 source "$CONFIG_DIR/icons.sh"
 source "$CONFIG_DIR/colors.sh"

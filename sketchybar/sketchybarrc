@@ -11,7 +11,7 @@ echo "MAIN DISPLAY: $MAIN_DISPLAY"
 sketchybar --add event aerospace_workspace_change
 
 if [[ $MAIN_DISPLAY = "Built-in" ]]; then
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-macloliair.sh"
+    source "$SKETCHYBAR_CONFIG/sketchybarrc-macloliair"
 else
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-maclolimini.sh"
+    source "$SKETCHYBAR_CONFIG/sketchybarrc-maclolimini"
 fi

@@ -33,7 +33,7 @@ export BG2=0x80494d64
 
 # General bar colors
 export BAR_COLOR=#FF0000
-#export BAR_BORDER_COLOR=$BG2
+export BAR_BORDER_COLOR=$BG2
 export BACKGROUND_0=$BG0
 export BACKGROUND_1=$BG1
 export BACKGROUND_2=$BG2
