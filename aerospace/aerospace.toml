@@ -136,6 +136,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
+#    alt-9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -146,6 +147,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-6 = 'move-node-to-workspace 6'
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
+#    alt-shift-9 = 'move-node-to-workspace 8'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -165,6 +167,7 @@ automatically-unhide-macos-hidden-apps = false
 6 = ['secondary', 'main']
 7 = ['secondary', 'main']
 8 = ['secondary', 'main']
+#9 = 'Sidecar Display (AirPlay)'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

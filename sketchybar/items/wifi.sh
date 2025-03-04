@@ -1,4 +1,4 @@
-source "$PLUGIN_DIR/wifi.sh"
+source "$PLUGIN_SHARED_DIR/wifi.sh"
 
 sketchybar --add item           wifi.control right                      \
                                                                         \
