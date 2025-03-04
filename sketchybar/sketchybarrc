@@ -1,17 +1,1 @@
-#!/usr/bin/env zsh
-
-SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
-
-MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
-
-echo "MAIN DISPLAY: $MAIN_DISPLAY"
-
-# Add the aerospace workspace change event
-sketchybar --add event aerospace_workspace_change
-sketchybar -m --add event song_update com.apple.iTunes.playerInfo
-
-if [[ $MAIN_DISPLAY = "Built-in" ]]; then
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-ma"
-else
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-mm"
-fi
+#!/bin/bash
