@@ -1,4 +1,5 @@
 {
+#darwin-rebuild switch --flake ~/.config/nix#maclolimini
   description = "Example nix-darwin system flake";
 
   inputs = {
@@ -6,6 +7,11 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+#    sf-pro = {
+#      url = "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg";
+#      flake = false;
+#    };
+
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
@@ -40,8 +46,12 @@
         enable=true;
         brews = [
           "mas"
+          "node"
+          "pnpm"
+          "lua"
         ]; 
         casks = [
+          "font-sf-pro"
           "linearmouse"
           "the-unarchiver"
           "miniconda"
@@ -50,27 +60,29 @@
           "elgato-camera-hub"
           "parsec"
           "syncthing"
-      ];
-      masApps = {
-        "WhatsApp Messenger" = 310633997;
-        "Spark Mail" = 6445813049;
-        "Velja" = 1607635845;
-        "Hidden Bar" = 1452453066;
-        "Windows App" = 1295203466;
-        "Xcode" = 497799835;
-        "DevCleaner for Xcode" = 1388020431;
-        "OneDrive" = 823766827;
-        "Microsoft Word" = 462054704;
-        "Microsoft Excel" = 462058435;
-        "KDE Connect" = 1580245991;
-        "Tailscale" = 1475387142;
-      };
-      onActivation.cleanup="zap";
-      onActivation.autoUpdate=true;
-      onActivation.upgrade=true;
-	};
+          "sf-symbols"
+          "font-hack-nerd-font"
+        ];
+        masApps = {
+          "WhatsApp Messenger" = 310633997;
+          "Spark Mail" = 6445813049;
+          "Velja" = 1607635845;
+          "Hidden Bar" = 1452453066;
+          "Windows App" = 1295203466;
+          "Xcode" = 497799835;
+          "DevCleaner for Xcode" = 1388020431;
+          "OneDrive" = 823766827;
+          "Microsoft Word" = 462054704;
+          "Microsoft Excel" = 462058435;
+          "KDE Connect" = 1580245991;
+          "Tailscale" = 1475387142;
+        };
+        onActivation.cleanup="zap";
+        onActivation.autoUpdate=true;
+        onActivation.upgrade=true;
+    	};
 
-      fonts.packages  = [
+  fonts.packages  = [
 	 pkgs.nerd-fonts.jetbrains-mono
 	 pkgs.nerd-fonts.roboto-mono
 	];
@@ -94,6 +106,12 @@
       ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
     done
         '';
+
+      services = {
+        sketchybar = {
+          enable = true;
+        };
+      };
 
       system.defaults = {
         finder.ShowMountedServersOnDesktop = true;
@@ -121,7 +139,8 @@
             "/System/Applications/Home.app"
             "/System/Applications/Notes.app"
             "/System/Applications/Reminders.app"
-            "${pkgs.obsidian}/Applications//Obsidian.app"
+            "/System/Applications/Freeform.app"
+            "${pkgs.obsidian}/Applications/Obsidian.app"
             "/System/Applications/App\ Store.app"
             "/System/Applications/System\ Settings.app"
             "/System/Applications/Utilities/Screen\ Sharing.app"
@@ -129,6 +148,7 @@
             "/Applications/Parsec.app"
             "${pkgs.moonlight-qt}/Applications/Moonlight.app"
             "/System/Applications/iPhone\ Mirroring.app"
+            "/Applications/Beekeeper\ Studio.app"
             "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
             "/Applications/Github\ Desktop.app"
             "${pkgs.alacritty}/Applications/Alacritty.app"
