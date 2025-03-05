@@ -56,13 +56,13 @@ sketchybar --default "${defaults[@]}"
 
 # Left
 source "$ITEM_DIR/apple.sh"
-#source "$ITEM_DIR/spaces.sh"
+#source "$ITEM_DIR/spaces.sh" 
 #source "$ITEM_DIR/front_app.sh"
 #source "$ITEM_DIR/yabai.sh"
 #source "$ITEM_DIR/temp.sh"
 
 # Right
-#source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/calendar.sh"
 #source "$ITEM_DIR/brew.sh"
 #source "$ITEM_DIR/input_source.sh"
 #source "$ITEM_DIR/wifi.sh"
