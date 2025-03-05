@@ -1,17 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
-SKETCHYBAR_CONFIG = "$HOME/.config/sketchybar"
+SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
 
 #Saves the main display
 #From: https://github.com/marcel-qayoom-taylor/.dotfiles/blob/main/.config/sketchybar/sketchybarrc
 MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
-echo "MAIN DISPLAY: $MAIN_DISPLAY"
 
 #Adds aerospace workspace change event
 sketchybar --add event aerospace_workspace_change
 
-if [[ $MAIN_DISPLAY = "Built-in" ]]; then
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-macloliair"
+
+if [[ $MAIN_DISPLAY == "Built-in" ]]; then
+    source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
 else
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-maclolimini"
+    source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
 fi

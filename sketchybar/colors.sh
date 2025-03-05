@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 ### Sonokai
 # export BLACK=0xff181819
