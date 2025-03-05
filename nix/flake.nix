@@ -76,10 +76,13 @@
           "Microsoft Excel" = 462058435;
           "KDE Connect" = 1580245991;
           "Tailscale" = 1475387142;
+          "Pipifier" = 1160374471;
         };
-        onActivation.cleanup="zap";
-        onActivation.autoUpdate=true;
-        onActivation.upgrade=true;
+        onActivation={
+          cleanup="zap";
+          autoUpdate=true;
+          upgrade=true;
+        };
     	};
 
   fonts.packages  = [
