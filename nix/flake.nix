@@ -62,6 +62,7 @@
           "syncthing"
           "sf-symbols"
           "font-hack-nerd-font"
+          "via"
         ];
         masApps = {
           "WhatsApp Messenger" = 310633997;
