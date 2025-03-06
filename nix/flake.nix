@@ -132,8 +132,9 @@
             "/Applications/Safari.app"
             "${pkgs.brave}/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
+            "/System/Applications/Podcasts.app"
             "/Applications/WhatsApp.app"
-            "${pkgs.discord}/Applications//Discord.app"
+            "${pkgs.discord}/Applications/Discord.app"
             "/Applications/Spark\ Desktop.app"
             "/System/Applications/Mail.app"
             "${pkgs.thunderbird}/Applications/Thunderbird\ ESR.app"
@@ -184,10 +185,44 @@
       homebrew = {
         enable=true;
         brews = [
+          "mas"
+          "node"
+          "pnpm"
+          "lua"
         ]; 
         casks = [
+          "font-sf-pro"
+          "linearmouse"
+          "the-unarchiver"
+          "miniconda"
+          "github"
+          "beekeeper-studio"
+          "elgato-camera-hub"
+          "parsec"
+          "syncthing"
+          "sf-symbols"
+          "font-hack-nerd-font"
+          "via"
+          "steam"
+          "duet"
+          "miniconda"
+          "fedora-media-writer"
+          "balenaetcher"
         ];
         masApps = {
+          "WhatsApp Messenger" = 310633997;
+          "Spark Mail" = 6445813049;
+          "Velja" = 1607635845;
+          "Hidden Bar" = 1452453066;
+          "Windows App" = 1295203466;
+          "Xcode" = 497799835;
+          "DevCleaner for Xcode" = 1388020431;
+          "OneDrive" = 823766827;
+          "Microsoft Word" = 462054704;
+          "Microsoft Excel" = 462058435;
+          "KDE Connect" = 1580245991;
+          "Tailscale" = 1475387142;
+          "Pipifier" = 1160374471;
         };
         onActivation={
           cleanup="zap";
@@ -202,6 +237,32 @@
           persistent-apps = [
             "/System/Applications/Launchpad.app"
             "/Applications/Safari.app"
+            "${pkgs.brave}/Applications/Brave\ Browser.app"
+            "/System/Applications/Music.app"
+            "/Applications/WhatsApp.app"
+            "${pkgs.discord}/Applications/Discord.app"
+            "/Applications/Spark\ Desktop.app"
+            "/System/Applications/Mail.app"
+            "${pkgs.thunderbird}/Applications/Thunderbird\ ESR.app"
+            "/System/Applications/Calendar.app"
+            "/System/Applications/Books.app"
+            "/System/Applications/Home.app"
+            "/System/Applications/Notes.app"
+            "/System/Applications/Reminders.app"
+            "/System/Applications/Freeform.app"
+            "${pkgs.obsidian}/Applications/Obsidian.app"
+            "/System/Applications/App\ Store.app"
+            "/System/Applications/System\ Settings.app"
+            "/System/Applications/Utilities/Screen\ Sharing.app"
+            "/Applications/Windows\ App.app"
+            "/Applications/Parsec.app"
+            "${pkgs.moonlight-qt}/Applications/Moonlight.app"
+            "/System/Applications/iPhone\ Mirroring.app"
+            "/Applications/Beekeeper\ Studio.app"
+            "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
+            "/Applications/Github\ Desktop.app"
+            "${pkgs.alacritty}/Applications/Alacritty.app"
+            "/Applications/Steam.app"
           ];
         };
       };
