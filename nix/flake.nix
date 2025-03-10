@@ -132,7 +132,6 @@
             "/Applications/Safari.app"
             "${pkgs.brave}/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
-            "/System/Applications/Podcasts.app"
             "/Applications/WhatsApp.app"
             "${pkgs.discord}/Applications/Discord.app"
             "/Applications/Spark\ Desktop.app"
@@ -189,6 +188,7 @@
           "node"
           "pnpm"
           "lua"
+          "wimlib"  
         ]; 
         casks = [
           "font-sf-pro"
@@ -239,6 +239,7 @@
             "/Applications/Safari.app"
             "${pkgs.brave}/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
+            "/System/Applications/Podcasts.app"
             "/Applications/WhatsApp.app"
             "${pkgs.discord}/Applications/Discord.app"
             "/Applications/Spark\ Desktop.app"

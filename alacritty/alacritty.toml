@@ -1,13 +1,10 @@
 colors.draw_bold_text_with_bright_colors = false
 
-[env]
-TERM = "alacritty"
-
 [window]
 title = "Terminal"
 dynamic_title = true
 opacity = 0.7
-#decorations = "None"
+decorations = "None"
 blur = false
 
 [scrolling]
@@ -16,9 +13,9 @@ history = 100_000
 [font]
 size = 15
 
-  [font.normal]
-  family = "RobotoMono Nerd Font"
-  style = "Medium"
+[font.normal]
+family = "RobotoMono Nerd Font"
+style = "Medium"
 
 [colors.primary]
 background = "#1e1e2e"
@@ -78,16 +75,6 @@ magenta = "#f5c2e7"
 cyan = "#94e2d5"
 white = "#a6adc8"
 
-[colors.dim]
-black = "#45475a"
-red = "#f38ba8"
-green = "#a6e3a1"
-yellow = "#f9e2af"
-blue = "#89b4fa"
-magenta = "#f5c2e7"
-cyan = "#94e2d5"
-white = "#bac2de"
-
 [[colors.indexed_colors]]
 index = 16
 color = "#fab387"
@@ -95,16 +82,3 @@ color = "#fab387"
 [[colors.indexed_colors]]
 index = 17
 color = "#f5e0dc"
-
-[cursor]
-style = { blinking = "On"}
-
-[keyboard]
-bindings = [
-  {key = "Right",mods = "Alt",chars = "\u001bF"},
-  {key = "Left",mods = "Alt",chars = "\u001bB"},
-  {key = "N",mods = "Command",action = "SpawnNewInstance"} 
-]
-
-[general]
-live_config_reload = true
