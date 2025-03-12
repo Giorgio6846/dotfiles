@@ -258,7 +258,6 @@
             "/Applications/Windows\ App.app"
             "/Applications/Parsec.app"
             "${pkgs.moonlight-qt}/Applications/Moonlight.app"
-            "/System/Applications/iPhone\ Mirroring.app"
             "/Applications/Beekeeper\ Studio.app"
             "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
             "/Applications/Github\ Desktop.app"
