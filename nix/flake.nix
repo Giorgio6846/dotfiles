@@ -101,6 +101,7 @@
           "sf-symbols"
           "font-hack-nerd-font"
           "via"
+          "balenaetcher"
         ];
         masApps = {
           "WhatsApp Messenger" = 310633997;
