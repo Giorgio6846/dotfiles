@@ -1,7 +1,7 @@
 #!/bin/bash
 
 music=(
-	script="$PLUGIN_DIR/music.sh"
+	script="$SHARED_PLUGIN_DIR/music.sh"
 	label.padding_right=8
 	label.font="OperatorMono Nerd Font:Book Italic:15.0"
 	padding_right=16

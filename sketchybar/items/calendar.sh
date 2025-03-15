@@ -7,7 +7,7 @@ calendar=(
     label.padding_right=5
     background.color=$BACKGROUND_1
     update_freq=30
-    script="$PLUGIN_DIR/calendar.sh"
+    script="$SHARED_PLUGIN_DIR/calendar.sh"
 )
 
 calendar_logo=(

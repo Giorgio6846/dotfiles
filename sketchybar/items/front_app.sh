@@ -4,7 +4,7 @@ front_app=(
   label.font="$FONT:Black:12.0"
   icon.background.drawing=on
   display=active
-  script="$PLUGIN_DIR/front_app.sh"
+  script="$SHARED_PLUGIN_DIR/front_app.sh"
   click_script="open -a 'Mission Control'"
 )
 sketchybar --add item front_app left         \

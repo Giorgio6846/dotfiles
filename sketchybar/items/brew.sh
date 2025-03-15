@@ -10,7 +10,7 @@ brew=(
 	icon.color="$BLUE"
 	padding_right=10
 	padding_left=0
-	script="$PLUGIN_DIR/brew.sh"
+	script="$SHARED_PLUGIN_DIR/brew.sh"
 )
 
 sketchybar --add event brew_update \

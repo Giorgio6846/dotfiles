@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 
 sketchybar --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --set volume script="$SHARED_PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change \

@@ -64,7 +64,7 @@ space_creator=(
   label.drawing=off
   display=active
   #click_script='yabai -m space --create'
-  script="$PLUGIN_DIR/space_windows.sh"
+  script="$SHARED_PLUGIN_DIR/space_windows.sh"
   #script="$PLUGIN_DIR/aerospace.sh"
   icon.color=$WHITE
 )
