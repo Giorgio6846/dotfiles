@@ -32,40 +32,9 @@
         };
       };
 
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-
-      system.stateVersion = 6;
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      system.activationScripts.applications.text = 
-      let
-      env = pkgs.buildEnv {
-        name = "system-applications";
-        paths = config.environment.systemPackages;
-        pathsToLink = "/Applications";
-      };
-      in
-        pkgs.lib.mkForce ''
-        # Set up applications.
-        echo "setting up /Applications..." >&2
-        rm -rf /Applications/Nix\ Apps
-        mkdir -p /Applications/Nix\ Apps
-        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read -r src; do
-          app_name=$(basename "$src")
-          echo "copying $src" >&2
-          ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-        done
-            '';
-    };
-  macloliminiConfig = { pkgs, config, ... }: {
       environment.systemPackages = with pkgs; [ 
         alacritty
-        neovim
         obsidian
-        mkalias
-        tmux
         discord
         firefox
         brave
@@ -87,6 +56,7 @@
           "node"
           "pnpm"
           "lua"
+
         ]; 
         casks = [
           "font-sf-pro"
@@ -123,6 +93,50 @@
           autoUpdate=true;
           upgrade=true;
         };
+      };
+      # Necessary for using flakes on this system.
+      nix.settings.experimental-features = "nix-command flakes";
+
+      system.stateVersion = 6;
+      system.configurationRevision = self.rev or self.dirtyRev or null;
+
+      system.activationScripts.applications.text = 
+      let
+      env = pkgs.buildEnv {
+        name = "system-applications";
+        paths = config.environment.systemPackages;
+        pathsToLink = "/Applications";
+      };
+      in
+        pkgs.lib.mkForce ''
+        # Set up applications.
+        echo "setting up /Applications..." >&2
+        rm -rf /Applications/Nix\ Apps
+        mkdir -p /Applications/Nix\ Apps
+        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+        while read -r src; do
+          app_name=$(basename "$src")
+          echo "copying $src" >&2
+          ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+        done
+            '';
+    };
+  macloliminiConfig = { pkgs, config, ... }: {
+      environment.systemPackages = with pkgs; [ 
+        neovim
+        mkalias
+        tmux
+      ];
+
+      homebrew = {
+        enable=true;
+        brews = [
+        ]; 
+        casks = [
+        ];
+        masApps = {
+        };
+
     	};
 
       system.defaults = {
@@ -166,69 +180,19 @@
 
     macloliairConfig = {pkgs, config, ...}: {
       environment.systemPackages = with pkgs; [ 
-        alacritty
-        obsidian
-        discord
-        firefox
-        brave
-        moonlight-qt
-        vscode
-        mos
-        thunderbird
-        btop
-        htop
-        raycast
-        aerospace
-        sketchybar
       ];
 
       homebrew = {
         enable=true;
         brews = [
-          "mas"
-          "node"
-          "pnpm"
-          "lua"
           "wimlib"  
         ]; 
         casks = [
-          "font-sf-pro"
-          "linearmouse"
-          "the-unarchiver"
-          "miniconda"
-          "github"
-          "beekeeper-studio"
-          "elgato-camera-hub"
-          "parsec"
-          "syncthing"
-          "sf-symbols"
-          "font-hack-nerd-font"
-          "via"
           "steam"
           "duet"
-          "miniconda"
           "fedora-media-writer"
-          "balenaetcher"
         ];
         masApps = {
-          "WhatsApp Messenger" = 310633997;
-          "Spark Mail" = 6445813049;
-          "Velja" = 1607635845;
-          "Hidden Bar" = 1452453066;
-          "Windows App" = 1295203466;
-          "Xcode" = 497799835;
-          "DevCleaner for Xcode" = 1388020431;
-          "OneDrive" = 823766827;
-          "Microsoft Word" = 462054704;
-          "Microsoft Excel" = 462058435;
-          "KDE Connect" = 1580245991;
-          "Tailscale" = 1475387142;
-          "Pipifier" = 1160374471;
-        };
-        onActivation={
-          cleanup="zap";
-          autoUpdate=true;
-          upgrade=true;
         };
     	};
 
