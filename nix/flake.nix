@@ -47,7 +47,7 @@
         raycast
         aerospace
         sketchybar
-        zerotier
+        zerotierone
       ];
 
       homebrew = {
@@ -57,7 +57,6 @@
           "node"
           "pnpm"
           "lua"
-
         ]; 
         casks = [
           "font-sf-pro"
