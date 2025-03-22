@@ -47,6 +47,7 @@
         raycast
         aerospace
         sketchybar
+        zerotier
       ];
 
       homebrew = {
