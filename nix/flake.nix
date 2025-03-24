@@ -1,6 +1,6 @@
 {
 #darwin-rebuild switch --flake ~/.config/nix#maclolimini
-  description = "Example nix-darwin system flake";
+  description = "Nix Flakes for Macloli-Mini and Macloli-Air";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -73,6 +73,11 @@
           "via"
           "balenaetcher"
         ];
+
+        taps = [ 
+          "mas-cli/tap"
+        ];
+
         masApps = {
           "WhatsApp Messenger" = 310633997;
           "Spark Mail" = 6445813049;
@@ -121,6 +126,7 @@
         done
             '';
     };
+
   macloliminiConfig = { pkgs, config, ... }: {
       environment.systemPackages = with pkgs; [ 
         neovim
@@ -133,6 +139,7 @@
         brews = [
         ]; 
         casks = [
+          "blender"
         ];
         masApps = {
         };
@@ -178,7 +185,7 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
     };
 
-    macloliairConfig = {pkgs, config, ...}: {
+  macloliairConfig = {pkgs, config, ...}: {
       environment.systemPackages = with pkgs; [ 
       ];
 
