@@ -1,4 +1,5 @@
 nix/flake.lock
 StardewValley/*
 .DS_Store
-
+NVIDIA\ Corporation
+com.nvidia.devtools

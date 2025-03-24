@@ -72,6 +72,7 @@
           "font-hack-nerd-font"
           "via"
           "balenaetcher"
+          "nvidia-nsight-systems"
         ];
 
         taps = [ 
@@ -158,7 +159,7 @@
             "${pkgs.discord}/Applications/Discord.app"
             "/Applications/Spark\ Desktop.app"
             "/System/Applications/Mail.app"
-            "${pkgs.thunderbird}/Applications/Thunderbird\ ESR.app"
+            "${pkgs.thunderbird}/Applications/Thunderbird.app"
             "/System/Applications/Calendar.app"
             "/System/Applications/Books.app"
             "/System/Applications/Home.app"
@@ -216,7 +217,7 @@
             "${pkgs.discord}/Applications/Discord.app"
             "/Applications/Spark\ Desktop.app"
             "/System/Applications/Mail.app"
-            "${pkgs.thunderbird}/Applications/Thunderbird\ ESR.app"
+            "${pkgs.thunderbird}/Applications/Thunderbird.app"
             "/System/Applications/Calendar.app"
             "/System/Applications/Books.app"
             "/System/Applications/Home.app"
