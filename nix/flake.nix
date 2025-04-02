@@ -74,7 +74,7 @@
           "balenaetcher"
           "nvidia-nsight-systems"
           "wireshark"
-          "mendeley"
+          "mendeley-reference-manager"
         ];
 
         taps = [ 
