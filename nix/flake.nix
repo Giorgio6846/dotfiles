@@ -92,6 +92,7 @@
           "OneDrive" = 823766827;
           "Microsoft Word" = 462054704;
           "Microsoft Excel" = 462058435;
+	        "Microsoft Powerpoint" = 462062816;
           "KDE Connect" = 1580245991;
           "Tailscale" = 1475387142;
           "Pipifier" = 1160374471;
