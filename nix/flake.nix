@@ -75,6 +75,7 @@
           "nvidia-nsight-systems"
           "wireshark"
           "mendeley-reference-manager"
+          "omnidisksweeper"
         ];
 
         taps = [ 
