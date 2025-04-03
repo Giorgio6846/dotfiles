@@ -76,6 +76,7 @@
           "wireshark"
           "mendeley-reference-manager"
           "omnidisksweeper"
+          "vnc-viewer"
         ];
 
         taps = [ 
