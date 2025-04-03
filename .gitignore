@@ -1,5 +1,9 @@
-nix/flake.lock
-StardewValley/*
-.DS_Store
+#Ignores unnecesary folders
+StardewValley
 NVIDIA\ Corporation
+wireshark
+
+#Ignores unnecesary files
+nix/flake.lock
+.DS_Store
 com.nvidia.devtools
