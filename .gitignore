@@ -2,6 +2,7 @@
 StardewValley
 NVIDIA\ Corporation
 wireshark
+gcloud
 
 #Ignores unnecesary files
 nix/flake.lock

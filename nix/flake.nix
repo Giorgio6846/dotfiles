@@ -35,6 +35,7 @@
       environment.systemPackages = with pkgs; [ 
         alacritty
         obsidian
+        tmux
         discord
         firefox
         brave
@@ -143,11 +144,16 @@
       homebrew = {
         enable=true;
         brews = [
+          "coreutils"
+          "make"
+          "gcc@12"
+          "lowdown"
         ]; 
         casks = [
           "blender"
         ];
         masApps = {
+          "Whisper Transcription" = 1668083311;
         };
 
     	};
