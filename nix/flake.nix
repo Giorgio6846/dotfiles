@@ -78,6 +78,7 @@
           "mendeley-reference-manager"
           "omnidisksweeper"
           "vnc-viewer"
+          "hammerspoon"
         ];
 
         taps = [ 
@@ -154,6 +155,7 @@
         ];
         masApps = {
           "Whisper Transcription" = 1668083311;
+          "DaVinci Resolve" = 571213070;
         };
 
     	};
