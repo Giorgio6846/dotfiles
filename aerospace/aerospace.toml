@@ -148,19 +148,19 @@ automatically-unhide-macos-hidden-apps = false
 
     alt-w = [
     "exec-and-forget open -a '/Applications/WhatsApp.app'",
-    "workspace m"
-    ]
-
-    alt-c = [
-    "exec-and-forget open -a '/System/Applications/Calendar.app'",
-    "workspace m"
+    "workspace w"
     ]
 
     alt-r = [
     "exec-and-forget open -a '/System/Applications/Reminders.app'",
-    "workspace m"
+    "workspace r"
     ]
  
+    alt-c = [
+    "exec-and-forget open -a '/System/Applications/Calendar.app'",
+    "workspace c"
+    ]
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
@@ -228,7 +228,7 @@ c = 'main'
     run = 'move-node-to-workspace d'
 
 [[on-window-detected]]
-    if.app-id = 'com.hnc.Discord'
+    if.app-id = 'com.apple.Music'
     run = 'move-node-to-workspace m'
 
 [[on-window-detected]]
