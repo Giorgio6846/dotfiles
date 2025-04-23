@@ -44,6 +44,7 @@
         mos
         thunderbird
         btop
+        tmux
         htop
         raycast
         aerospace
