@@ -16,7 +16,6 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
-
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
@@ -136,7 +135,22 @@ automatically-unhide-macos-hidden-apps = false
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
+    
+    alt-d = [
+    "exec-and-forget open -a '/Applications/Nix Apps/Discord.app",
+    "workspace d"
+    ]
+    
+    alt-m = [
+    "exec-and-forget open -a '/System/Applications/Music.app'",
+    "workspace m"
+    ]
 
+    alt-w = [
+    "exec-and-forget open -a '/Applications/WhatsApp.app'",
+    "workspace m"
+    ]
+ 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
@@ -146,6 +160,10 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-6 = 'move-node-to-workspace 6'
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
+
+    alt-shift-d = 'move-node-to-workspace d'
+    alt-shift-m = 'move-node-to-workspace m'
+    alt-shift-w = 'move-node-to-workspace w'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -166,6 +184,10 @@ automatically-unhide-macos-hidden-apps = false
 7 = ['secondary', 'main']
 8 = ['secondary', 'main']
 
+d = 'main'
+m = 'main'
+w = 'main'
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -185,3 +207,16 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+
+[[on-window-detected]]
+    if.app-id = 'com.hnc.Discord'
+    run = 'move-node-to-workspace d'
+
+[[on-window-detected]]
+    if.app-id = 'com.hnc.Discord'
+    run = 'move-node-to-workspace m'
+
+[[on-window-detected]]
+    if.app-id = 'net.whatsapp.WhatsApp'
+    run = 'move-node-to-workspace w'
