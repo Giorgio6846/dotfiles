@@ -150,6 +150,16 @@ automatically-unhide-macos-hidden-apps = false
     "exec-and-forget open -a '/Applications/WhatsApp.app'",
     "workspace m"
     ]
+
+    alt-c = [
+    "exec-and-forget open -a '/System/Applications/Calendar.app'",
+    "workspace m"
+    ]
+
+    alt-r = [
+    "exec-and-forget open -a '/System/Applications/Reminders.app'",
+    "workspace m"
+    ]
  
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -164,6 +174,8 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-d = 'move-node-to-workspace d'
     alt-shift-m = 'move-node-to-workspace m'
     alt-shift-w = 'move-node-to-workspace w'
+    alt-shift-r = 'move-node-to-workspace r'
+    alt-shift-c = 'move-node-to-workspace c'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -187,6 +199,8 @@ automatically-unhide-macos-hidden-apps = false
 d = 'main'
 m = 'main'
 w = 'main'
+r = 'main'
+c = 'main'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -220,3 +234,11 @@ w = 'main'
 [[on-window-detected]]
     if.app-id = 'net.whatsapp.WhatsApp'
     run = 'move-node-to-workspace w'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.reminders'
+    run = 'move-node-to-workspace r'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.iCal'
+    run = 'move-node-to-workspace c'
