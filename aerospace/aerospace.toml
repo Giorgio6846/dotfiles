@@ -136,29 +136,40 @@ automatically-unhide-macos-hidden-apps = false
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     
+    #Discord Button
     alt-d = [
     "exec-and-forget open -a '/Applications/Nix Apps/Discord.app",
     "workspace d"
     ]
     
+    #Music Button
     alt-m = [
     "exec-and-forget open -a '/System/Applications/Music.app'",
     "workspace m"
     ]
 
+    #Whatsapp Button
     alt-w = [
     "exec-and-forget open -a '/Applications/WhatsApp.app'",
     "workspace w"
     ]
 
+    #Reminders Button
     alt-r = [
     "exec-and-forget open -a '/System/Applications/Reminders.app'",
     "workspace r"
     ]
  
+    #Calendar Button
     alt-c = [
     "exec-and-forget open -a '/System/Applications/Calendar.app'",
     "workspace c"
+    ]
+
+    #Freeform Button
+    alt-f = [
+    "exec-and-forget open -a '/System/Applications/Freeform.app'",
+    "workspace f"
     ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -171,11 +182,12 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
 
-    alt-shift-d = 'move-node-to-workspace d'
+    alt-shift-d = 'move-node-to-workspace d' 
     alt-shift-m = 'move-node-to-workspace m'
     alt-shift-w = 'move-node-to-workspace w'
     alt-shift-r = 'move-node-to-workspace r'
     alt-shift-c = 'move-node-to-workspace c'
+    alt-shift-f = 'move-node-to-workspace f'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -201,6 +213,7 @@ m = 'main'
 w = 'main'
 r = 'main'
 c = 'main'
+f = 'main'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -242,3 +255,7 @@ c = 'main'
 [[on-window-detected]]
     if.app-id = 'com.apple.iCal'
     run = 'move-node-to-workspace c'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.freeform'
+    run = 'move-node-to-workspace f'
