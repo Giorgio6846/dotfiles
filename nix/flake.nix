@@ -166,6 +166,7 @@
           "lowdown"
         ]; 
         casks = [
+          "docker"
           "blender"
         ];
         masApps = {
