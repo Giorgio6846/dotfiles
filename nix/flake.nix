@@ -112,6 +112,7 @@
           "omnidisksweeper"
           "vnc-viewer"
           "hammerspoon"
+          "pgadmin4"
         ];
 
         taps = [ 
@@ -184,12 +185,12 @@
           "lowdown"
         ]; 
         casks = [
-          "docker"
           "blender"
         ];
         masApps = {
-          "Whisper Transcription" = 1668083311;
           "DaVinci Resolve" = 571213070;
+          "PocketPal" = 1538263296;
+          "Octal for Hacker News" = 1308885491;
         };
 
     	};
