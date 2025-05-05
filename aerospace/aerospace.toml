@@ -138,7 +138,7 @@ automatically-unhide-macos-hidden-apps = false
     
     #Discord Button
     alt-d = [
-    "exec-and-forget open -a '/Applications/Nix Apps/Discord.app",
+    "exec-and-forget open -a '/Applications/Nix Apps/Discord.app'",
     "workspace d"
     ]
     
@@ -170,6 +170,16 @@ automatically-unhide-macos-hidden-apps = false
     alt-f = [
     "exec-and-forget open -a '/System/Applications/Freeform.app'",
     "workspace f"
+    ]
+
+    #Brave Button
+    alt-b = [
+    "exec-and-forget open -n '/Applications/Nix Apps/Brave Browser.app'",
+    ]
+
+    #Safari Button
+    alt-s = [
+    "exec-and-forget open -n '/Applications/Safari.app'",
     ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
