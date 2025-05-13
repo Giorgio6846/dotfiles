@@ -181,6 +181,11 @@ automatically-unhide-macos-hidden-apps = false
     alt-s = [
     "exec-and-forget open -n '/Applications/Safari.app'",
     ]
+    
+    #Alacritty Button
+    alt-a = [
+    "exec-and-forget open -n '/Applications/Nix Apps/Alacritty.app'",
+    ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'

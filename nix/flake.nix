@@ -113,6 +113,7 @@
           "vnc-viewer"
           "hammerspoon"
           "pgadmin4"
+          "zerotier-one"
         ];
 
         taps = [ 
