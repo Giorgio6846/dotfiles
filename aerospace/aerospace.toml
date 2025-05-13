@@ -181,6 +181,11 @@ automatically-unhide-macos-hidden-apps = false
     alt-s = [
     "exec-and-forget open -n '/Applications/Safari.app'",
     ]
+  
+    #Preview Button
+    alt-p = [
+    "exec-and-forget open -n '/System/Applications/Preview.app'",
+    ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
