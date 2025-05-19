@@ -54,13 +54,16 @@
         sketchybar.enable = true;
       };
 
-      system.defaults = {
-        finder.ShowMountedServersOnDesktop = true;
-        menuExtraClock.Show24Hour = true;
+      system={
+          primaryUser = "giorgio6846";
+          defaults = {
+          finder.ShowMountedServersOnDesktop = true;
+          menuExtraClock.Show24Hour = true;
 
-        NSGlobalDomain = {
-          AppleICUForce24HourTime = true;
-          _HIHideMenuBar = true;
+          NSGlobalDomain = {
+            AppleICUForce24HourTime = true;
+            _HIHideMenuBar = true;
+          };
         };
       };
 
@@ -187,6 +190,7 @@
         ]; 
         casks = [
           "blender"
+	  "obs"
         ];
         masApps = {
           "DaVinci Resolve" = 571213070;
