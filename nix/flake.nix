@@ -187,10 +187,12 @@
           "make"
           "gcc@12"
           "lowdown"
+          "openjdk"
         ]; 
         casks = [
           "blender"
 	  "obs"
+	  "hdfview"
         ];
         masApps = {
           "DaVinci Resolve" = 571213070;
