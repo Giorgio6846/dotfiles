@@ -85,6 +85,8 @@
         aerospace
         sketchybar
         zerotierone
+        wireshark
+        syncthing
       ];
 
       homebrew = {
@@ -94,23 +96,25 @@
           "node"
           "pnpm"
           "lua"
+	  "awscli"
         ]; 
         casks = [
           "font-sf-pro"
+          "vlc"
+          "handbrake"
           "linearmouse"
           "the-unarchiver"
           "miniconda"
           "github"
+          "caffeine"
           "beekeeper-studio"
           "elgato-camera-hub"
           "parsec"
-          "syncthing"
           "sf-symbols"
           "font-hack-nerd-font"
           "via"
           "balenaetcher"
           "nvidia-nsight-systems"
-          "wireshark"
           "mendeley-reference-manager"
           "omnidisksweeper"
           "vnc-viewer"
@@ -188,11 +192,15 @@
           "gcc@12"
           "lowdown"
           "openjdk"
+          "virt-viewer"
         ]; 
         casks = [
           "blender"
-	  "obs"
-	  "hdfview"
+          "obs"
+          "hdfview"
+        ];
+        taps = [ 
+          "jeffreywildman/homebrew-virt-manager"
         ];
         masApps = {
           "DaVinci Resolve" = 571213070;
