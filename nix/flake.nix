@@ -94,6 +94,7 @@
           "node"
           "pnpm"
           "lua"
+          "pyenv"
         ]; 
         casks = [
           "font-sf-pro"
