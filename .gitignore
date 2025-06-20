@@ -9,3 +9,5 @@ btop
 nix/flake.lock
 .DS_Store
 com.nvidia.devtools
+linearmouse/linearmouse.json
+btop/btop.conf
