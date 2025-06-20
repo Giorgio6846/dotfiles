@@ -96,7 +96,7 @@
           "node"
           "pnpm"
           "lua"
-	  "awscli"
+	        "awscli"
         ]; 
         casks = [
           "font-sf-pro"
