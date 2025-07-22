@@ -68,25 +68,16 @@
       };
 
       environment.systemPackages = with pkgs; [ 
-        alacritty
-        obsidian
+        aerospace
+        btop
+        htop
         tmux
-        discord
-        firefox
-        brave
         moonlight-qt
         vscode
         mos
         thunderbird
-        btop
-        tmux
-        htop
         raycast
-        aerospace
         sketchybar
-        zerotierone
-        wireshark
-        syncthing
       ];
 
       homebrew = {
@@ -97,9 +88,16 @@
           "pnpm"
           "lua"
           "pyenv"
-	        "awscli"
+      	  "awscli"
+          "syncthing"
         ]; 
         casks = [
+          "caffeine"
+          "thunderbird"
+          "firefox"
+          "brave"
+          "discord"
+          "obsidian"
           "font-sf-pro"
           "vlc"
           "handbrake"
@@ -107,7 +105,6 @@
           "the-unarchiver"
           "miniconda"
           "github"
-          "caffeine"
           "beekeeper-studio"
           "elgato-camera-hub"
           "parsec"
@@ -121,6 +118,7 @@
           "vnc-viewer"
           "hammerspoon"
           "pgadmin4"
+          "wireshark-app"
           "zerotier-one"
         ];
 
