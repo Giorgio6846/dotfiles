@@ -83,19 +83,20 @@
       homebrew = {
         enable=true;
         brews = [
+          "gh"
           "mas"
           "node"
           "pnpm"
           "lua"
           "pyenv"
       	  "awscli"
-          "syncthing"
         ]; 
         casks = [
+          "syncthing-app"
+          "alacritty"
           "caffeine"
-          "thunderbird"
           "firefox"
-          "brave"
+          "brave-browser"
           "discord"
           "obsidian"
           "font-sf-pro"
@@ -124,11 +125,11 @@
 
         taps = [ 
           "mas-cli/tap"
+          "deskflow/homebrew-tap"
         ];
 
         masApps = {
           "WhatsApp Messenger" = 310633997;
-          "Spark Mail" = 6445813049;
           "Velja" = 1607635845;
           "Hidden Bar" = 1452453066;
           "Windows App" = 1295203466;
@@ -141,6 +142,7 @@
           "KDE Connect" = 1580245991;
           "Tailscale" = 1475387142;
           "Pipifier" = 1160374471;
+          "Microsoft Outlook" = 985367838;
         };
         onActivation={
           cleanup="zap";
@@ -150,6 +152,7 @@
       };
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+      nix.enable = false;	
 
       system.stateVersion = 6;
       system.configurationRevision = self.rev or self.dirtyRev or null;

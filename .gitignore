@@ -4,6 +4,7 @@ NVIDIA\ Corporation
 wireshark
 gcloud
 btop
+gh
 
 #Ignores unnecesary files
 nix/flake.lock
