@@ -5,10 +5,9 @@ wireshark
 gcloud
 btop
 gh
+linearmouse
 
 #Ignores unnecesary files
 nix/flake.lock
 .DS_Store
 com.nvidia.devtools
-linearmouse/linearmouse.json
-btop/btop.conf

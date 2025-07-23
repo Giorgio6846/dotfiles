@@ -1,32 +1,30 @@
 {
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
   "schemes" : [
     {
       "if" : {
         "device" : {
           "vendorID" : "0x1532",
+          "productName" : "Razer Mamba Tournament Edition",
           "category" : "mouse",
-          "productID" : "0x46",
-          "productName" : "Razer Mamba Tournament Edition"
+          "productID" : "0x46"
         }
-      },
-      "pointer" : {
-        "disableAcceleration" : true
       },
       "buttons" : {
         "universalBackForward" : true
       },
       "scrolling" : {
         "distance" : {
-          "vertical" : "auto"
+          "vertical" : "36px"
         },
+        "acceleration" : 1,
         "speed" : {
-          "vertical" : 3
-        },
-        "acceleration" : {
-          "vertical" : 2
+          "vertical" : 0
         }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
       }
     }
-  ],
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+  ]
 }
