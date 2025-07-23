@@ -103,6 +103,7 @@
           "vlc"
           "handbrake"
           "linearmouse"
+          "transmission"
           "the-unarchiver"
           "miniconda"
           "github"
