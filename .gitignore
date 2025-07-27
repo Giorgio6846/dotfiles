@@ -6,6 +6,7 @@ gcloud
 btop
 gh
 linearmouse
+coredns-repo
 
 #Ignores unnecesary files
 nix/flake.lock
