@@ -75,7 +75,6 @@
         moonlight-qt
         vscode
         mos
-        thunderbird
         raycast
         sketchybar
       ];
@@ -90,6 +89,11 @@
           "lua"
           "pyenv"
       	  "awscli"
+      	  "cmake"
+      	  "ninja"
+      	  "cocoapods"
+      	  "coredns"
+      	  "go"
         ]; 
         casks = [
           "syncthing-app"
@@ -98,6 +102,7 @@
           "firefox"
           "brave-browser"
           "discord"
+          "postman"
           "obsidian"
           "font-sf-pro"
           "vlc"
@@ -218,10 +223,10 @@
           persistent-apps = [
             "/System/Applications/Launchpad.app"
             "/Applications/Safari.app"
-            "${pkgs.brave}/Applications/Brave\ Browser.app"
+            "/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
             "/Applications/WhatsApp.app"
-            "${pkgs.discord}/Applications/Discord.app"
+            "/Applications/Discord.app"
             "/System/Applications/Mail.app"
             "/Applications/Microsoft\ Outlook.app"
             "/System/Applications/Calendar.app"
@@ -230,7 +235,7 @@
             "/System/Applications/Notes.app"
             "/System/Applications/Reminders.app"
             "/System/Applications/Freeform.app"
-            "${pkgs.obsidian}/Applications/Obsidian.app"
+            "/Applications/Obsidian.app"
             "/System/Applications/App\ Store.app"
             "/System/Applications/System\ Settings.app"
             "/System/Applications/Utilities/Screen\ Sharing.app"
@@ -241,7 +246,7 @@
             "/Applications/Beekeeper\ Studio.app"
             "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
             "/Applications/Github\ Desktop.app"
-            "${pkgs.alacritty}/Applications/Alacritty.app"
+            "/Applications/Alacritty.app"
           ];
         };
       };
@@ -276,11 +281,11 @@
           persistent-apps = [
             "/System/Applications/Launchpad.app"
             "/Applications/Safari.app"
-            "${pkgs.brave}/Applications/Brave\ Browser.app"
+            "/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
             "/System/Applications/Podcasts.app"
             "/Applications/WhatsApp.app"
-            "${pkgs.discord}/Applications/Discord.app"
+            "/Applications/Discord.app"
             "/System/Applications/Mail.app"
             "/Applications/Microsoft\ Outlook.app"
             "/System/Applications/Calendar.app"
@@ -289,7 +294,7 @@
             "/System/Applications/Notes.app"
             "/System/Applications/Reminders.app"
             "/System/Applications/Freeform.app"
-            "${pkgs.obsidian}/Applications/Obsidian.app"
+            "/Applications/Obsidian.app"
             "/System/Applications/App\ Store.app"
             "/System/Applications/System\ Settings.app"
             "/System/Applications/Utilities/Screen\ Sharing.app"
@@ -297,9 +302,9 @@
             "/Applications/Parsec.app"
             "${pkgs.moonlight-qt}/Applications/Moonlight.app"
             "/Applications/Beekeeper\ Studio.app"
-            "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
+            "/Applications/Visual\ Studio\ Code.app"
             "/Applications/Github\ Desktop.app"
-            "${pkgs.alacritty}/Applications/Alacritty.app"
+            "/Applications/Alacritty.app"
             "/Applications/Steam.app"
           ];
         };
