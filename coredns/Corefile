@@ -1,12 +1,10 @@
-# ./Corefile
 .:53 {
-    hosts hosts.local {
+    hosts /Users/giorgio6846/.config/coredns/hosts.local {
         fallthrough
-        reload 1s       # re‑read hosts.local every 5s
-        ttl 5           # short TTL for quick updates
+        reload 1s
+        ttl 5
     }
-    forward . 1.1.1.1  # fallback for all other names
+    forward . 1.1.1.1
     log
     errors
-} 
-
+}

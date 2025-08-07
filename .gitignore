@@ -12,3 +12,4 @@ coredns-repo
 nix/flake.lock
 .DS_Store
 com.nvidia.devtools
+coredns/coredns-repo
