@@ -1,19 +1,19 @@
 # Fischl
-10.241.197.59   Fischl.lan
-100.123.154.69  Fischl.lan
-10.0.1.12       Fischl.lan
+10.241.206.187  Fischl.lan #Zerotier
+100.123.154.69  Fischl.lan #Tailscale
+10.0.1.12       Fischl.lan #Local
 
 # MacloliMini
-10.241.156.128  MacloliMini.lan
-100.64.198.69   MacloliMini.lan
-10.0.1.10       MacloliMini.lan
+10.241.156.128  MacloliMini.lan #Zerotier
+100.64.198.69   MacloliMini.lan #Tailscale
+10.0.1.10       MacloliMini.lan #Local
 
 # MacloliAir
-10.241.181.227  MacloliAir.lan
-100.120.117.105 MacloliAir.lan
-10.0.1.14       MacloliAir.lan
+10.241.181.227  MacloliAir.lan #Zerotier
+100.120.117.105 MacloliAir.lan #Tailscale
+10.0.1.14       MacloliAir.lan #Local
 
 # Alfred
-10.241.15.140   Alfred.lan
-100.66.14.69    Alfred.lan
-10.0.1.1        Alfred.lan
+10.241.15.140   Alfred.lan #Zerotier
+100.66.14.69    Alfred.lan #Tailscale
+10.0.1.1        Alfred.lan #Local
