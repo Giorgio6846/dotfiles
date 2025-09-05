@@ -7,6 +7,7 @@ btop
 gh
 linearmouse
 coredns-repo
+darktable
 
 #Ignores unnecesary files
 nix/flake.lock
