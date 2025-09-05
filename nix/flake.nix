@@ -126,6 +126,7 @@
           "pgadmin4"
           "wireshark-app"
           "zerotier-one"
+          "adobe-acrobat-reader"
         ];
 
         taps = [ 
@@ -302,7 +303,7 @@
             "/Applications/Parsec.app"
             "${pkgs.moonlight-qt}/Applications/Moonlight.app"
             "/Applications/Beekeeper\ Studio.app"
-            "/Applications/Visual\ Studio\ Code.app"
+            "${pkgs.vscode}/Applications/Visual\ Studio\ Code.app"
             "/Applications/Github\ Desktop.app"
             "/Applications/Alacritty.app"
             "/Applications/Steam.app"
