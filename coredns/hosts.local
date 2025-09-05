@@ -1,7 +1,12 @@
-# Fischl
-10.241.206.187  Fischl.lan #Zerotier
-100.123.154.69  Fischl.lan #Tailscale
-10.0.1.12       Fischl.lan #Local
+# Fischl-Proxmox
+#10.241.206.187  Fischl-Proxmox.lan #Zerotier
+#100.123.154.69  Fischl-Proxmox.lan #Tailscale
+10.0.1.12       Fischl-Proxmox.lan #Local
+
+# Fischl-FedoraVM
+#10.241.206.187  Fischl.lan #Zerotier
+#100.123.154.69  Fischl.lan #Tailscale
+10.0.0.12       Fischl-FedoraVM.lan #Local
 
 # MacloliMini
 10.241.156.128  MacloliMini.lan #Zerotier

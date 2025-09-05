@@ -186,7 +186,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-p = [
     "exec-and-forget open -n '/System/Applications/Preview.app'",
     ]
-
     
     #Alacritty Button
     alt-a = [
@@ -258,7 +257,6 @@ f = ['built-in', 'main']
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
-
 
 [[on-window-detected]]
     if.app-id = 'com.hnc.Discord'
