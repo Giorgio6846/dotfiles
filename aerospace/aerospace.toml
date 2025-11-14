@@ -202,8 +202,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
 
-    alt-shift-9 = 'move-node-to-workspace 9'
-
     alt-shift-d = 'move-node-to-workspace d' 
     alt-shift-m = 'move-node-to-workspace m'
     alt-shift-w = 'move-node-to-workspace w'
@@ -225,11 +223,10 @@ automatically-unhide-macos-hidden-apps = false
 2 = ["S22F350 (2)", 'built-in', 'main']
 3 = ["S22F350 (2)", 'built-in', 'main']
 4 = ["S22F350 (2)", 'built-in', 'main']
-5 = ["S22F350 (1)", 'built-in', 'secondary']
-6 = ["S22F350 (1)", 'built-in', 'secondary']
-7 = ["S22F350 (1)", 'built-in', 'secondary']
-8 = ["S22F350 (1)", 'built-in', 'secondary']
-9 = ['Sidecar Display']
+5 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
+6 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
+7 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
+8 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
 
 d = ['built-in', 'main']
 m = ['built-in', 'main']

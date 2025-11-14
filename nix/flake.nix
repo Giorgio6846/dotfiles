@@ -6,6 +6,7 @@
     trusted-substituters = [
       "https://xixiaofinland.cachix.org"
       "https://cachix.cachix.org"
+      "https://cache.nixos.org"
       "https://nixpkgs.cachix.org"
     ];
     trusted-public-keys = [
@@ -98,6 +99,7 @@
         casks = [
           "syncthing-app"
           "alacritty"
+	  "drawio"
           "caffeine"
           "firefox"
           "brave-browser"
@@ -222,7 +224,7 @@
         dock = {
           autohide = true;
           persistent-apps = [
-            "/System/Applications/Launchpad.app"
+            "/System/Applications/Apps.app"
             "/Applications/Safari.app"
             "/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
@@ -235,6 +237,7 @@
             "/System/Applications/Home.app"
             "/System/Applications/Notes.app"
             "/System/Applications/Reminders.app"
+            "/System/Applications/Stocks.app"
             "/System/Applications/Freeform.app"
             "/Applications/Obsidian.app"
             "/System/Applications/App\ Store.app"
@@ -295,6 +298,7 @@
             "/System/Applications/Notes.app"
             "/System/Applications/Reminders.app"
             "/System/Applications/Freeform.app"
+            "/System/Applications/Stocks.app"
             "/Applications/Obsidian.app"
             "/System/Applications/App\ Store.app"
             "/System/Applications/System\ Settings.app"
