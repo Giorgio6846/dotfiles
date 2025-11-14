@@ -97,6 +97,8 @@
       	  "go"
         ]; 
         casks = [
+      	  "darktable"
+      	  "rawtherapee"
           "syncthing-app"
           "alacritty"
 	  "drawio"
