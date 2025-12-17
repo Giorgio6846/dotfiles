@@ -18,9 +18,9 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/master";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
@@ -101,7 +101,7 @@
       	  "rawtherapee"
           "syncthing-app"
           "alacritty"
-	  "drawio"
+          "drawio"
           "caffeine"
           "firefox"
           "brave-browser"
