@@ -128,7 +128,7 @@
           "omnidisksweeper"
           "vnc-viewer"
           "pgadmin4"
-          "wireshark-app"
+          "wireshark"
           "zerotier-one"
           "adobe-acrobat-reader"
         ];
@@ -215,7 +215,7 @@
           "jeffreywildman/homebrew-virt-manager"
         ];
         masApps = {
-          "DaVinci Resolve" = 571213070;
+          #"DaVinci Resolve" = 571213070;
           "PocketPal" = 1538263296;
           "Octal for Hacker News" = 1308885491;
         };
