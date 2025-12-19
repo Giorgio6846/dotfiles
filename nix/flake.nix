@@ -98,6 +98,7 @@
         ]; 
         casks = [
       	  "darktable"
+      	  "notion"
       	  "rawtherapee"
           "syncthing-app"
           "alacritty"
