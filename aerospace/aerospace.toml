@@ -160,7 +160,7 @@ automatically-unhide-macos-hidden-apps = false
 
     #Safari Button
     alt-s = [
-    "exec-and-forget open -n '/Applications/Safari.app'",
+    "exec-and-forget open -n '/Users/giorgio6846/Library/Mobile Documents/com~apple~ScriptEditor2/Documents/New Safari Window.app'",
     ]
 
     #Discord Button

@@ -8,6 +8,7 @@ gh
 linearmouse
 coredns-repo
 darktable
+filezilla
 
 #Ignores unnecesary files
 nix/flake.lock

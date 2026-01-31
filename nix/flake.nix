@@ -126,6 +126,7 @@
           "balenaetcher"
           "nvidia-nsight-systems"
           "mendeley-reference-manager"
+          "microsoft-teams"
           "omnidisksweeper"
           "vnc-viewer"
           "pgadmin4"
@@ -217,8 +218,8 @@
         ];
         masApps = {
           #"DaVinci Resolve" = 571213070;
-          "PocketPal" = 1538263296;
-          "Octal for Hacker News" = 1308885491;
+          #"PocketPal" = 1538263296;
+          #"Octal for Hacker News" = 1308885491;
         };
 
     	};
