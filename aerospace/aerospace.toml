@@ -136,40 +136,49 @@ automatically-unhide-macos-hidden-apps = false
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     
+    #Whatsapp Button
+    alt-w = [
+    "exec-and-forget open -a '/Applications/WhatsApp.app'",
+    "workspace w"
+    ]
+    
+    #Reminders Button
+    alt-r = [
+    "exec-and-forget open -a '/System/Applications/Reminders.app'",
+    "workspace r"
+    ]
+
+    #Preview Button
+    alt-p = [
+    "exec-and-forget open -n '/System/Applications/Preview.app'",
+    ]
+
+    #Alacritty Button
+    alt-a = [
+    "exec-and-forget open -n '/Applications/Alacritty.app'",
+    ]
+
+    #Safari Button
+    alt-s = [
+    "exec-and-forget open -n '/Applications/Safari.app'",
+    ]
+
     #Discord Button
     alt-d = [
     "exec-and-forget open -a '/Applications/Discord.app'",
     "workspace d"
     ]
     
-    #Music Button
-    alt-m = [
-    "exec-and-forget open -a '/System/Applications/Music.app'",
-    "workspace m"
-    ]
-
-    #Whatsapp Button
-    alt-w = [
-    "exec-and-forget open -a '/Applications/WhatsApp.app'",
-    "workspace w"
-    ]
-
-    #Reminders Button
-    alt-r = [
-    "exec-and-forget open -a '/System/Applications/Reminders.app'",
-    "workspace r"
-    ]
- 
-    #Calendar Button
-    alt-c = [
-    "exec-and-forget open -a '/System/Applications/Calendar.app'",
-    "workspace c"
-    ]
-
     #Freeform Button
     alt-f = [
     "exec-and-forget open -a '/System/Applications/Freeform.app'",
     "workspace f"
+    ]
+
+    #Calendar Button
+    alt-c = [
+    "exec-and-forget open -a '/System/Applications/Calendar.app'",
+    "workspace c"
     ]
 
     #Brave Button
@@ -177,19 +186,10 @@ automatically-unhide-macos-hidden-apps = false
     "exec-and-forget open -n '/Applications/Brave Browser.app'",
     ]
 
-    #Safari Button
-    alt-s = [
-    "exec-and-forget open -n '/Applications/Safari.app'",
-    ]
-  
-    #Preview Button
-    alt-p = [
-    "exec-and-forget open -n '/System/Applications/Preview.app'",
-    ]
-    
-    #Alacritty Button
-    alt-a = [
-    "exec-and-forget open -n '/Applications/Alacritty.app'",
+    #Music Button
+    alt-m = [
+    "exec-and-forget open -a '/System/Applications/Music.app'",
+    "workspace m"
     ]
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -223,10 +223,10 @@ automatically-unhide-macos-hidden-apps = false
 2 = ["S22F350 (2)", 'built-in', 'main']
 3 = ["S22F350 (2)", 'built-in', 'main']
 4 = ["S22F350 (2)", 'built-in', 'main']
-5 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
-6 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
-7 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
-8 = ["S22F350 (1)", 'secondary', 'HP', 'built-in']
+5 = ["S22F350 (1)", 'secondary', 'built-in']
+6 = ["S22F350 (1)", 'secondary', 'built-in']
+7 = ["S22F350 (1)", 'secondary', 'built-in']
+8 = ["S22F350 (1)", 'secondary', 'built-in']
 
 d = ['built-in', 'main']
 m = ['built-in', 'main']

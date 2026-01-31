@@ -111,7 +111,7 @@
           "obsidian"
           "font-sf-pro"
           "vlc"
-          "handbrake"
+          "handbrake-app"
           "linearmouse"
           "transmission"
           "the-unarchiver"
@@ -129,7 +129,7 @@
           "omnidisksweeper"
           "vnc-viewer"
           "pgadmin4"
-          "wireshark"
+          "wireshark-app"
           "zerotier-one"
           "adobe-acrobat-reader"
         ];
