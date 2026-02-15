@@ -89,6 +89,7 @@
           "gh"
           "ifstat"
           "pipes-sh"
+          "starship"
           "mas"
           "fastfetch"        
           "node"
