@@ -1,6 +1,0 @@
---hs.hotkey.bind({"alt"}, "d", function()
---  hs.application.launchOrFocus("Discord")
---  hs.eventtap.leftClick()
---  hs.execute("/run/current-system/sw/bin/aerospace move-node-to-workspace d") -- adjust path if needed
---  hs.execute("/run/current-system/sw/bin/aerospace workspace d") -- adjust path if needed
---end)
