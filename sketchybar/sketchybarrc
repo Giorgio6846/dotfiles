@@ -1,17 +1,174 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
+# === CONFIG ROOT ===
+CONFIG_DIR="$HOME/.config/sketchybar"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-#Saves the main display
-#From: https://github.com/marcel-qayoom-taylor/.dotfiles/blob/main/.config/sketchybar/sketchybarrc
-MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
+source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/icon_map.sh"  # Loads all defined icons
+source "$CONFIG_DIR/icons.sh"
 
-#Adds aerospace workspace change event
-sketchybar --add event aerospace_workspace_change
+FONT="Roboto Mono"          # Transparent bar background
 
+# === PADDING CONSTANTS
+BAR_PADDING=8             # Outer bar padding (use compartments for outer spacing)
+ITEM_PADDING=6             # Default horizontal padding between items
+ICON_PADDING=2             # Consistent icon inner padding (reduced from mixed 2/4 for tighter look)
+LABEL_PADDING=2            # Consistent label inner padding (unified from 4/2)
+COMP_PADDING=6             # Compartment outer padding (increased from bar-level 0 for breathing room)
+
+# Start music monitor if not running
+if ! pgrep -f music_monitor_file > /dev/null; then
+    ~/.config/sketchybar/scripts/music_monitor_file > /dev/null 2>&1 &
+fi
+
+# === BAR (No outer padding; defer to compartments) ===
+sketchybar --bar position=top height=34 blur_radius=0 color="$CLR_BG" padding_left="$BAR_PADDING" padding_right="$BAR_PADDING"
+
+# === DEFAULTS (Unified paddings for all items/icons/labels) ===
+sketchybar --default \
+  padding_left="$ITEM_PADDING" \
+  padding_right="$ITEM_PADDING" \
+  icon.font="$FONT:Regular:12.0" \
+  label.font="$FONT:Regular:14.0" \
+  icon.color="$CLR_FG" \
+  label.color="$CLR_FG" \
+  icon.padding_left="$ICON_PADDING" \
+  icon.padding_right="$ICON_PADDING" \
+  label.padding_left="$LABEL_PADDING" \
+  label.padding_right="$LABEL_PADDING"
+
+# === WORKSPACES ===
+for sid in $(aerospace list-workspaces --all); do
+  monitor=$(aerospace list-windows --workspace "$sid" --format "%{monitor-appkit-nsscreen-screens-id}")
+
+  if [ -z "$monitor" ]; then
+    monitor="1"
+  fi
+
+  sketchybar --add item space."$sid" left \
+    --subscribe space."$sid" aerospace_workspace_change display_change system_woke mouse.entered mouse.exited \
+    --set space."$sid" \
+    display="$monitor" \
+    padding_right=0 \
+    icon="$sid" \
+    label.padding_right=7 \
+    icon.padding_left=7 \
+    icon.padding_right=4 \
+    background.drawing=on \
+    label.font="sketchybar-app-font:Regular:16.0" \
+    background.color="$ACCENT_COLOR" \
+    icon.color="$CLR_FG" \
+    background.corner_radius=5 \
+    background.color=0x44ffffff \
+    background.corner_radius=5 \
+    background.height=20 \
+    background.drawing=on \
+    background.height=25 \
+    label.drawing=on \
+    click_script="aerospace workspace $sid" \
+    script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+
+  LEFT_SPACE_ITEMS+=("space.$sid")
+
+done
+
+sketchybar --add item front_app left \
+  --set front_app \
+    script="$PLUGIN_DIR/front_app.sh" \
+    click_script="open -a 'Mission Control'" \
+    icon.background.drawing=on \
+    display=active \
+    label.y_offset=1 \
+    label.padding_right="$COMP_PADDING" \
+  --subscribe front_app front_app_switched
+
+# === RIGHT SIDE ITEMS ===
+sketchybar --add item clock right \
+  --set clock update_freq=10 icon=􀉉 script="$PLUGIN_DIR/clock.sh" label.padding_right="$COMP_PADDING" 
+
+sketchybar --add item   volume right \
+           --set        volume script="$PLUGIN_DIR/volume.sh" \
+                               click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
+                               popup.background.border_width=2                                \
+                               popup.background.corner_radius=3                                \
+                               popup.background.border_color=0xff9dd274                       \
+            --default background.padding_left=5                                             \
+                      background.padding_right=5                                            \
+                      icon.padding_right=5                                                  \
+                      icon.font="SF Pro:Bold:16.0"                                          \
+                      label.font="SF Pro:Semibold:13.0"                                     \
+           --subscribe  volume volume_change \
+           --add        item volume.output popup.volume \
+           --set        volume.output \
+                        label="${AUDIO_DEVICE}" \
+                        script="$PLUGIN_DIR/volume_click.sh"
 
 if [[ $MAIN_DISPLAY == "Built-in" ]]; then
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
-else
-    source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
+sketchybar --add item battery right \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+  --subscribe battery system_woke power_source_change
 fi
+
+sketchybar -m --add item network_up right \
+              --set network_up label.font="$FONT:Bold:12.0" \
+                               icon.font="$FONT:Bold:12.0" \
+                               icon=􀆇 \
+                               icon.highlight_color=$BLUE \
+                               y_offset=5 \
+                               width=0 \
+                               update_freq=1 \
+                               script="$PLUGIN_DIR/network.sh" \
+\
+              --add item network_down right \
+              --set network_down label.font="$FONT:Bold:12.0" \
+                                 icon.font="$FONT:Bold:12.0" \
+                                 icon=􀆈 \
+                                 icon.highlight_color=$YELLOW \
+                                 y_offset=-5 \
+                                 update_freq=1
+
+sketchybar --add item net right \
+  --set net update_freq=120 icon=􀙇 script="$PLUGIN_DIR/wifi.sh"
+
+sketchybar --add item music right \
+           --set music \
+              script="$PLUGIN_DIR/music.sh" \
+              click_script="$PLUGIN_DIR/music_click.sh" \
+              icon.drawing=on \
+              icon.scale=0.8 \
+              update_freq=5 \
+              scroll_duration=1 \
+              scroll_texts=true \
+              label.max_chars=30 \
+              updates=on \
+              drawing=off
+
+# === ITEM GROUPS ===
+LEFT_ITEMS=("${LEFT_SPACE_ITEMS[@]}" front_app)
+RIGHT_ITEMS=(clock volume battery network_up network_down net music)
+
+# === COMPARTMENTS (Outer padding for clean edges; height=26 leaves vertical margin in 34pt bar) ===
+sketchybar --add bracket left_compartment "${LEFT_ITEMS[@]}" \
+  --set left_compartment \
+    background.color="$CLR_COMP_BG" \
+    background.corner_radius=8 \
+    background.height=26 \
+    background.border_color="$CLR_COMP_BORDER" \
+    background.border_width=1 \
+    background.drawing=on
+
+sketchybar --add bracket right_compartment "${RIGHT_ITEMS[@]}" \
+  --set right_compartment \
+    background.color="$CLR_COMP_BG" \
+    background.corner_radius=8 \
+    background.height=26 \
+    background.border_color="$CLR_COMP_BORDER" \
+    background.border_width=1 \
+    background.padding_left=0 \
+    background.drawing=on
+
+# === FINALIZE ===
+sketchybar --update
+
+echo "sketchybar configuation loaded.."

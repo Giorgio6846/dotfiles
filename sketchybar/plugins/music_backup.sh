@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 INFO_FILE="/tmp/music_info.txt"
-ARTWORK="/tmp/album.jpg"
 
 # Check if Music app is running
 if ! pgrep -x Music > /dev/null; then 
@@ -15,22 +14,24 @@ if ! pgrep -f music_monitor_file > /dev/null; then
     sleep 1
 fi
 
+# Read info file
 if [[ -f "$INFO_FILE" ]] && [[ -s "$INFO_FILE" ]]; then
     TITLE=$(grep "^title:" "$INFO_FILE" | cut -d: -f2- | xargs)
     ARTIST=$(grep "^artist:" "$INFO_FILE" | cut -d: -f2- | xargs)
     STATE=$(grep "^state:" "$INFO_FILE" | cut -d: -f2- | xargs)
     
     if [[ -n "$TITLE" ]]; then
-        ICON="$ARTWORK"
+        ICON="􀊖"
         [[ "$STATE" == "Paused" ]] && ICON="􀊘"
         
-        LABEL="${TITLE}${ARTIST:+ - $ARTIST}"
+        #[[ ${#TITLE} -gt 20 ]] && TITLE="${TITLE:0:20}…"
+        #[[ ${#ARTIST} -gt 15 ]] && ARTIST="${ARTIST:0:15}…"
         
-        if [[ -f "$ARTWORK" ]]; then
-            sketchybar --set music background.image=$ARTWORK 	background.image.scale=0.03	background.image.corner_radius=8 	background.image.border_color="$TRANSPARENT"	background.color="$TRANSPARENT" background.image="$ICON" label="$LABEL" drawing=on icon.padding_left=20
-        else
-            sketchybar --set music icon="􀊖" background.image= label="$LABEL" drawing=on
-        fi
+        LABEL="${TITLE}${ARTIST:+ - $ARTIST}"
+        #[[ -z "$ARTIST" ]] && LABEL="$TITLE"
+        
+        sketchybar --set music icon="$ICON" label="$LABEL" drawing=on 
+
     else
         sketchybar --set music drawing=off
     fi

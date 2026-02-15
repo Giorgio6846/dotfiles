@@ -38,8 +38,6 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     }; 
-
-    
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask}:
@@ -82,12 +80,22 @@
 
       homebrew = {
         enable=true;
+        taps = [ 
+          "mas-cli/tap"
+          "deskflow/homebrew-tap"
+        ];
+        
         brews = [
           "gh"
+          "ifstat"
+          "pipes-sh"
           "mas"
+          "fastfetch"        
           "node"
           "pnpm"
+          "jq"
           "lua"
+          "switchaudio-osx"
           "pyenv"
       	  "awscli"
       	  "cmake"
@@ -122,6 +130,7 @@
           "parsec"
           "sf-symbols"
           "font-hack-nerd-font"
+          "font-sketchybar-app-font"
           "via"
           "balenaetcher"
           "nvidia-nsight-systems"
@@ -133,11 +142,6 @@
           "wireshark-app"
           "zerotier-one"
           "adobe-acrobat-reader"
-        ];
-
-        taps = [ 
-          "mas-cli/tap"
-          "deskflow/homebrew-tap"
         ];
 
         masApps = {
@@ -206,7 +210,7 @@
           "gcc@12"
           "lowdown"
           "openjdk"
-          "virt-viewer"
+          #"virt-viewer"
         ]; 
         casks = [
           "blender"
@@ -223,6 +227,15 @@
         };
 
     	};
+
+      system.activationScripts.applications.text = ''
+        echo "setting up ~/Applications/Nix Apps..."
+        mkdir -p ~/Applications/Nix\ Apps
+        for app in $(find ${config.system.build.applications}/Applications -maxdepth 1 -type l); do
+          src="$(/usr/bin/stat -f%Y "$app")"
+          cp -r "$src" ~/Applications/Nix\ Apps
+        done
+      '';
 
       system.defaults = {
         dock = {
@@ -243,6 +256,7 @@
             "/System/Applications/Reminders.app"
             "/System/Applications/Stocks.app"
             "/System/Applications/Freeform.app"
+            "/Applications/Notion.app"
             "/Applications/Obsidian.app"
             "/System/Applications/App\ Store.app"
             "/System/Applications/System\ Settings.app"
@@ -335,7 +349,7 @@
             enable = true;
 
             # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-            enableRosetta = true;
+            #enableRosetta = true;
 
             # User owning the Homebrew prefix
             user = "giorgio6846";

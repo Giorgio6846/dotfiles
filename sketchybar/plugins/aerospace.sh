@@ -1,47 +1,90 @@
 #!/usr/bin/env bash
+source "$CONFIG_DIR/colors.sh"
 
-echo \$FOCUSED_WORKSPACE: $FOCUSED_WORKSPACE, \$NAME: $NAME \$1: $1 >> ~/aaaa
+FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused --format "%{workspace}")
 
-if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-    sketchybar --set $NAME background.drawing=on
-else
-    sketchybar --set $NAME background.drawing=off
+if [ "$SENDER" == "mouse.entered" ]; then
+  if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+    exit 0
+  fi
+  sketchybar --set "$NAME" \
+    background.drawing=on \
+    label.color="$CLR_FG" \
+    icon.color="$CLR_FG" \
+    background.color="$ACCENT_COLOR"
+  exit 0
 fi
 
+if [ "$SENDER" == "mouse.exited" ]; then
+  if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+    exit 0
+  fi
+  sketchybar --set "$NAME" \
+    background.drawing=off \
+    label.color="$ACCENT_COLOR" \
+    icon.color="$ACCENT_COLOR" \
+    background.color="$BAR_COLOR"
+  exit 0
+fi
 
+icons=""
 
-# MAIN_COLOR=0xffa17fa7
-# ACCENT_COLOR=0xffe19286
-#
-# echo $NAME > ~/debug_skekychybar
-#
-# if [ "$1" = "change-focused-window" ]; then
-#     echo "change-focused-window"
-#     focused_window_info=$(aerospace list-windows --focused)
-#     focused_window_id=$(echo $focused_window_info | awk -F ' \\| ' '{print $1}')
-#     if [ "$2" = "$focused_window_id" ]; then
-#         sketchybar --set $NAME icon.color=$ACCENT_COLOR
-#     else
-#         sketchybar --set $NAME icon.color=$MAIN_COLOR
-#     fi
-# fi
-#
-# if [ "$1" = "change-focused-workspace" ]; then
-#     echo "change-focused-workspace"
-#     focused_workspace=$(aerospace list-workspaces --focused)
-#     if [ "$2" = "$focused_workspace" ]; then
-#         sketchybar --set $NAME label.color=$ACCENT_COLOR
-#     else
-#         sketchybar --set $NAME label.color=$MAIN_COLOR
-#     fi
-# fi
-#
-# if [ "$1" = "move-window-within-workspace" ]; then
-#     echo "move-window-within-workspace"
-#     focused_workspace=$(aerospace list-workspaces --focused)
-#     if [ "$2" = "$focused_workspace" ]; then
-#         sketchybar --set $NAME label.color=$ACCENT_COLOR
-#     else
-#         sketchybar --set $NAME label.color=$MAIN_COLOR
-#     fi
-# fi
+APPS_INFO=$(aerospace list-windows --workspace "$1" --json --format "%{monitor-appkit-nsscreen-screens-id}%{app-name}")
+
+IFS=$'\n'
+for sid in $(echo "$APPS_INFO" | jq -r "map ( .\"app-name\" ) | .[]"); do
+  icons+=$("$CONFIG_DIR/plugins/icon_map_fn.sh" "$sid")
+  icons+="  "
+done
+
+for monitor_id in $(echo "$APPS_INFO" | jq -r "map ( .\"monitor-appkit-nsscreen-screens-id\" ) | .[]"); do
+  monitor=$monitor_id
+done
+
+if [ -z "$monitor" ]; then
+  monitor="1"
+fi
+
+# When icons is empty, set it to " "
+if [ -z "$icons" ]; then
+  if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+    sketchybar --animate sin 10 \
+      --set "$NAME" \
+      y_offset=10 y_offset=0 \
+      background.drawing=on
+
+    sketchybar --set "$NAME" \
+      display="$monitor" \
+      drawing=on \
+      label="$icons" \
+      label.color="$CLR_FG" \
+      icon.color="$CLR_FG" \
+      background.color="$ACCENT_COLOR"
+  else
+    sketchybar --set "$NAME" drawing=off
+  fi
+else
+  if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+    sketchybar --animate sin 10 \
+      --set "$NAME" \
+      y_offset=10 y_offset=0 \
+      background.drawing=on
+
+    sketchybar --set "$NAME" \
+      display="$monitor" \
+      drawing=on \
+      label="$icons" \
+      label.color="$CLR_FG" \
+      icon.color="$CLR_FG" \
+      background.color="$ACCENT_COLOR"
+  else
+    sketchybar --set "$NAME" \
+      display="$monitor" \
+      drawing=on \
+      label="$icons" \
+      background.drawing=off \
+      label.color="$ACCENT_COLOR" \
+      icon.color="$ACCENT_COLOR" \
+      background.color="$BAR_COLOR"
+  fi
+fi
