@@ -1,0 +1,26 @@
+---
+- name: Customize Windows PC for Gaming and Streaming
+  hosts: windows_machines
+  gather_facts: yes
+  
+  tasks:
+    - name: Install Gaming Platforms and Sunshine via Winget
+      ansible.windows.win_shell: |
+        winget install --id {{ item }} --exact --silent --accept-package-agreements --accept-source-agreements
+      loop:
+        - Valve.Steam
+        - Mozilla.Firefox
+        - Discord.Discord
+        - Parsec.Parsec
+        - ppy.osu
+        - ElectronicArts.EADesktop
+        - Blizzard.BattleNet
+        - LizardByte.Sunshine
+
+    - name: Install Apps from the Microsoft Store
+      ansible.windows.win_shell: |
+        winget install --id {{item}} --exact --silent --accept-package-agreements --accept-source-agreements
+      loop:
+        - 9PFHDD62MXS1
+        - 9pj8266bhfwn
+---

@@ -25,7 +25,6 @@ else
     echo "Not installing Nix Flakes."
 fi
 
-
 echo "Do you want to install the SketchyBar helpers? (y/n): "
 read answer
 

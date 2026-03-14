@@ -1,7 +1,12 @@
 #!/bin/sh
 
+if [[ $MAIN_DISPLAY == "Built-in" ]]; then
+    wifi_name=$(networksetup -listpreferredwirelessnetworks en1 | sed -n '2 p' | tr -d '\t')
+else
+    wifi_name=$(networksetup -listpreferredwirelessnetworks en0 | sed -n '2 p' | tr -d '\t')
+fi
+
 # Get the current Wi-Fi SSID
-wifi_name=$(networksetup -listpreferredwirelessnetworks en1 | sed -n '2 p' | tr -d '\t')
 
 # If the Wi-Fi name is empty, set a default value (e.g., "No Wi-Fi")
 if [ -z "$wifi_name" ]; then

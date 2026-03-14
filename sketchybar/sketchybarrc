@@ -105,9 +105,9 @@ sketchybar --add item   volume right \
                         script="$PLUGIN_DIR/volume_click.sh"
 
 if [[ $MAIN_DISPLAY == "Built-in" ]]; then
-sketchybar --add item battery right \
-  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-  --subscribe battery system_woke power_source_change
+  sketchybar --add item battery right \
+    --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+    --subscribe battery system_woke power_source_change
 fi
 
 sketchybar -m --add item network_up right \
@@ -146,7 +146,11 @@ sketchybar --add item music right \
 
 # === ITEM GROUPS ===
 LEFT_ITEMS=("${LEFT_SPACE_ITEMS[@]}" front_app)
-RIGHT_ITEMS=(clock volume battery network_up network_down net music)
+if [[ $MAIN_DISPLAY == "Built-in" ]]; then
+  RIGHT_ITEMS=(clock volume network_up network_down net music)
+else
+  RIGHT_ITEMS=(clock volume battery network_up network_down net music)
+fi
 
 # === COMPARTMENTS (Outer padding for clean edges; height=26 leaves vertical margin in 34pt bar) ===
 sketchybar --add bracket left_compartment "${LEFT_ITEMS[@]}" \
