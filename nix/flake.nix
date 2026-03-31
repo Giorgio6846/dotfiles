@@ -113,8 +113,6 @@
           "alacritty"
           "drawio"
           "caffeine"
-          "firefox"
-          "brave-browser"
           "discord"
           "postman"
           "obsidian"
