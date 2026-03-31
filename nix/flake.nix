@@ -86,6 +86,7 @@
         ];
         
         brews = [
+          "nmap"
           "gh"
           "ifstat"
           "pipes-sh"
@@ -106,6 +107,7 @@
       	  "go"
         ]; 
         casks = [
+          "anki"
       	  "darktable"
       	  "notion"
       	  "rawtherapee"
