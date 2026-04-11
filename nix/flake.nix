@@ -18,11 +18,10 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
-    nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -179,7 +178,7 @@
       env = pkgs.buildEnv {
         name = "system-applications";
         paths = config.environment.systemPackages;
-        pathsToLink = "/Applications";
+        pathsToLink = ["/Applications"];
       };
       in
         pkgs.lib.mkForce ''
@@ -244,7 +243,6 @@
           persistent-apps = [
             "/System/Applications/Apps.app"
             "/Applications/Safari.app"
-            "/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
             "/Applications/WhatsApp.app"
             "/Applications/Discord.app"
@@ -304,7 +302,6 @@
           persistent-apps = [
             "/System/Applications/Launchpad.app"
             "/Applications/Safari.app"
-            "/Applications/Brave\ Browser.app"
             "/System/Applications/Music.app"
             "/System/Applications/Podcasts.app"
             "/Applications/WhatsApp.app"
